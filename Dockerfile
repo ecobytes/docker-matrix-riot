@@ -1,7 +1,7 @@
 FROM alpine:3.5
 
 # Maintainer
-MAINTAINER Andreas Peters <support@aventer.biz>
+MAINTAINER Andreas Peters <support@aventer.biz>, Jon Richter <jon@allmende.io>
 
 # install homeserver template
 COPY adds/start.sh /start.sh
@@ -41,8 +41,10 @@ RUN chmod a+x /start.sh \
     && npm install \
     && rm -rf /riot-web/node_modules/phantomjs-prebuilt/phantomjs \
     && GIT_VEC=$(git ls-remote https://github.com/vector-im/riot-web $BV_VEC | cut -f 1) \
-    && echo "riot:  $BV_VEC ($GIT_VEC)" > /synapse.version \
-    && npm run build \
+    && echo "riot:  $BV_VEC ($GIT_VEC)" > /synapse.version
+COPY config.degrowth.json /riot-web/config.json
+WORKDIR /riot-web/
+RUN npm run build \
     || exit 1 \
     ; \
     apk del \

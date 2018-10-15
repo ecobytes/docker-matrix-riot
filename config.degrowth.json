@@ -1,0 +1,36 @@
+{
+    "default_hs_url": "https://degrowth.net",
+    "default_is_url": "https://vector.im",
+    "disable_custom_urls": false,
+    "disable_guests": false,
+    "disable_login_language_selector": false,
+    "disable_3pid_login": false,
+    "brand": "Degrowth.net",
+    "integrations_ui_url": "https://scalar.vector.im/",
+    "integrations_rest_url": "https://scalar.vector.im/api",
+    "bug_report_endpoint_url": "https://riot.im/bugreports/submit",
+    "features": {
+        "feature_groups": "labs",
+        "feature_pinning": "labs"
+    },
+    "default_federate": true,
+    "welcomePageUrl": "home.html",
+    "default_theme": "light",
+    "roomDirectory": {
+        "servers": [
+            "degrowth.net",
+            "matrix.allmende.io",
+            "matrix.org"
+        ]
+    },
+    "welcomeUserId": "@riot-bot:matrix.org",
+    "piwik": {
+        "url": "https://piwik.allmende.io/",
+        "whitelistedHSUrls": ["https://matrix.org", "https://matrix.allmende.io", "https://degrowth.net"],
+        "whitelistedISUrls": ["https://vector.im", "https://matrix.org"],
+        "siteId": 16
+    },
+    "enable_presence_by_hs_url": {
+        "https://matrix.org": false
+    }
+}
