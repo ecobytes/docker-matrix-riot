@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.8
 
 # Maintainer
 MAINTAINER Andreas Peters <support@aventer.biz>, Jon Richter <jon@allmende.io>
@@ -10,7 +10,7 @@ COPY adds/start.sh /start.sh
 ENTRYPOINT ["/start.sh"]
 
 # Git branch to download  
-ARG BV_VEC=v0.17.1
+ARG BV_VEC=v0.17.9
 ENV BV_VEC=${BV_VEC:-master}
 
 # To rebuild the image, add `--build-arg REBUILD=$(date)` to your docker build
@@ -29,6 +29,7 @@ RUN chmod a+x /start.sh \
         libjpeg-turbo \
         libssl1.0 \
         nodejs \
+        nodejs-npm \
         sqlite-libs \
         unzip \
         || exit 1 ; \
